@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title id="page-title">Attractions · Satun Scape</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modern-theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600&display=swap">
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="page-attractions">
+    <a class="skip-link" href="#main-content" id="skip-link">Skip to content</a>
+    <header class="site-header site-header--home">
+        <nav class="top-nav-bar" aria-label="Main navigation">
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+                <li><a href="attractions.html" class="nav-link active" id="nav-attractions">Attractions</a></li>
+                <li><a href="accommodation.html" class="nav-link" id="nav-accommodation">Stay</a></li>
+                <li><a href="booking.html" class="nav-link" id="nav-booking">Book</a></li>
+                <li><a href="cafes.html" class="nav-link" id="nav-cafes">Eat & drink</a></li>
+                <li><a href="market.html" class="nav-link" id="nav-market">Markets</a></li>
+                <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+            </ul>
+            <div class="lang-switch" role="toolbar" aria-label="Language">
+                <button type="button" class="lang-btn" data-lang="en">EN</button>
+                <button type="button" class="lang-btn" data-lang="th">ไทย</button>
+                <button type="button" class="lang-btn" data-lang="zh">中文</button>
+            </div>
+            <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            
+            </button>
+        </nav>
+        <div class="hero-home">
+            <p class="hero-eyebrow" id="hero-eyebrow">Satun Province · Thailand</p>
+            <h1 id="hero-title">Choose your attraction category</h1>
+        </div>
+    </header>
+
+    <div class="visitor-strip" aria-label="Visitor notes">
+        <div class="visitor-strip-inner">
+            <span class="visitor-pill" id="visitor-pill-1"></span>
+            <span class="visitor-pill" id="visitor-pill-2"></span>
+            <span class="visitor-pill" id="visitor-pill-3"></span>
+            <span class="visitor-pill" id="visitor-pill-4"></span>
+        </div>
+    </div>
+
+    <main id="main-content">
+    <div class="content">
+        <h2 id="page-intro-heading">Explore attractions</h2>
+        <div class="category-buttons">
+            <button type="button" class="large-button" onclick="location.href='Cultural.html'">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/18/09/7a/8f/satun-national-museum.jpg?w=1200&h=-1&s=1" alt="Cultural" class="button-img">
+                <span id="cultural-attractions" style="font-size: 2rem; font-weight: 200; color: #fff; padding: 10px 20px; background: rgba(0, 0, 0, 0.5); border-radius: 5px; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); font-family: 'DM Sans', sans-serif;">Cultural attractions</span>
+            </button>
+            <button type="button" class="large-button" onclick="location.href='Natural.html'">
+                <img src="https://files.thailandtourismdirectory.go.th/assets/upload/2017/11/02/2017110227f237e6b7f96587b6202ff3607ad88a153922.JPG" alt="Natural" class="button-img">
+                <span id="natural-attractions" style="font-size: 2rem; font-weight: 200; color: #fff; padding: 10px 20px; background: rgba(0, 0, 0, 0.5); border-radius: 5px; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); font-family: 'DM Sans', sans-serif;">Natural attractions</span>
+            </button>
+        </div>
+    </div>
+    </main>
+
+    <footer class="site-footer">
+        <p id="footer-text">© 2026 Satun Scape · unofficial visitor guide · not a government site</p>
+        <p class="footer-note"><a href="contact.html" id="footer-link-contact">Contact</a> · <a href="https://www.tourismthailand.org/" target="_blank" rel="noopener noreferrer" id="footer-link-tourism">Tourism Thailand</a></p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/motion.js" defer></script>
+</body>
+</html>

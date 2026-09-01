@@ -1,0 +1,514 @@
+/* ============================================================
+   SATUN SCAPE — "Andaman Youth" modern theme layer
+   Loaded after styles.css: re-skins every shared component,
+   adds ambient motion, and keeps all existing markup/JS intact.
+   ============================================================ */
+
+:root {
+  --ink: #0b2545;
+  --ink-soft: #234066;
+  --sea: #12b8a6;
+  --sea-deep: #0c8f83;
+  --coral: #ff6b5b;
+  --coral-deep: #e6503f;
+  --sun: #ffc93c;
+  --sun-deep: #f2a900;
+  --cream: #fff8ee;
+  --paper: #ffffff;
+  --line: rgba(11, 37, 69, 0.1);
+  --shadow-soft: 0 18px 40px -18px rgba(11, 37, 69, 0.28);
+  --shadow-pop: 0 10px 24px -10px rgba(255, 107, 91, 0.55);
+  --grad-sunset: linear-gradient(120deg, var(--coral) 0%, var(--sun) 100%);
+  --grad-sea: linear-gradient(120deg, var(--sea) 0%, #0a6f93 100%);
+  --ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* ---------- type + base ---------- */
+body {
+  font-family: 'Prompt', 'Roboto', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+h1, h2, h3,
+.hero-title, #hero-title, .section-title, .section-heading-video,
+.package-card h3, .attraction-info h3, .cafe-info h3, .attraction-item h3,
+.market-info h3, .info-section h3, .satun-info h2, .contact-details h3,
+.booking-panel h2, .pkg-modal-body h2, .large-button span {
+  font-family: 'Kanit', 'Prompt', sans-serif !important;
+  letter-spacing: 0.01em;
+}
+
+::selection { background: var(--sun); color: var(--ink); }
+
+a { color: var(--sea-deep); }
+
+/* ---------- ambient drifting blobs (always-moving background) ---------- */
+body {
+  position: relative;
+  isolation: isolate;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.35;
+  pointer-events: none;
+  will-change: transform;
+}
+
+body::before {
+  top: -12vh;
+  left: -10vw;
+  width: 46vw;
+  height: 46vw;
+  background: radial-gradient(circle at 30% 30%, var(--sea), transparent 70%);
+  animation: driftA 26s ease-in-out infinite;
+}
+
+body::after {
+  bottom: -18vh;
+  right: -12vw;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle at 60% 40%, var(--coral), transparent 70%);
+  animation: driftB 32s ease-in-out infinite;
+}
+
+@keyframes driftA {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(6vw, 8vh) scale(1.12); }
+  66%      { transform: translate(-4vw, 4vh) scale(0.96); }
+}
+
+@keyframes driftB {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50%      { transform: translate(-7vw, -6vh) scale(1.08); }
+}
+
+/* ---------- skip link ---------- */
+.skip-link {
+  background: var(--ink);
+  color: #fff !important;
+  border-radius: 999px;
+}
+
+/* ---------- header / nav ---------- */
+.site-header.site-header--home {
+  background: linear-gradient(160deg, var(--ink) 0%, #123a63 55%, var(--sea-deep) 100%) !important;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 32px 32px;
+}
+
+.site-header.site-header--home::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 90px;
+  background:
+    radial-gradient(120% 60px at 15% 100%, rgba(255,255,255,0.10), transparent 70%),
+    radial-gradient(120% 60px at 80% 100%, rgba(255,255,255,0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.top-nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(11, 37, 69, 0.38) !important;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 0.3s var(--ease), padding 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.top-nav-bar.is-scrolled {
+  background: rgba(11, 37, 69, 0.86) !important;
+  box-shadow: 0 12px 30px -16px rgba(0,0,0,0.5);
+}
+
+.top-nav-bar .nav-menu {
+  background: transparent !important;
+}
+
+.top-nav-bar .nav-link {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+  border-radius: 999px;
+  position: relative;
+  transition: color 0.25s var(--ease), background 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.top-nav-bar .nav-link:hover,
+.top-nav-bar .nav-link:focus-visible {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+.top-nav-bar .nav-link.active {
+  background: var(--grad-sunset) !important;
+  color: var(--ink) !important;
+  font-weight: 700;
+  box-shadow: 0 6px 16px -6px rgba(255, 107, 91, 0.6);
+}
+
+.lang-btn {
+  border-radius: 999px !important;
+  font-family: 'Kanit', sans-serif;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease), box-shadow 0.25s var(--ease) !important;
+}
+
+.lang-btn:hover { transform: translateY(-3px) scale(1.05); }
+
+.lang-btn.lang-btn-active,
+.lang-btn[aria-pressed="true"] {
+  background: var(--sun) !important;
+  color: var(--ink) !important;
+  box-shadow: 0 6px 14px -4px rgba(255, 201, 60, 0.7);
+}
+
+.menu-toggle .bar {
+  background: #fff !important;
+}
+
+/* ---------- hero ---------- */
+.hero-home {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-family: 'Kanit', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem !important;
+  animation: floatY 5s ease-in-out infinite;
+}
+
+.hero-home h1,
+.hero-home #hero-title {
+  background: linear-gradient(95deg, #ffffff 20%, var(--sun) 55%, var(--coral) 85%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  animation: shimmer 6s linear infinite, floatY 6s ease-in-out infinite;
+  font-weight: 800 !important;
+}
+
+@keyframes shimmer {
+  to { background-position: -220% center; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+.hero-lead { color: rgba(255, 255, 255, 0.88) !important; }
+
+/* ---------- visitor pill strip ---------- */
+.visitor-strip {
+  position: relative;
+  z-index: 2;
+  margin-top: -18px !important;
+}
+
+.visitor-pill {
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+  border-radius: 999px !important;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--line);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+
+.visitor-pill:hover {
+  transform: translateY(-4px) rotate(-1deg);
+  box-shadow: 0 20px 36px -16px rgba(18, 184, 166, 0.4);
+}
+
+.visitor-pill i { color: var(--coral) !important; }
+
+/* ---------- section titles ---------- */
+.section-title, .section-heading-video, #market-title, #contact-title,
+.satun-info h2, #attractions-title {
+  position: relative;
+  display: inline-block;
+  color: var(--ink) !important;
+}
+
+.section-title::after, .section-heading-video::after, .satun-info h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 5px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: var(--grad-sunset);
+}
+
+.section-sub, .section-sub-inline { color: var(--ink-soft) !important; opacity: 0.85; }
+
+/* ---------- buttons everywhere ---------- */
+.package-card button,
+.attraction-info button, .cafe-info button,
+.btn-booking-submit, .btn-booking-cta, .btn-pkg-select, .btn-pkg-modal-book {
+  background: var(--grad-sunset) !important;
+  color: var(--ink) !important;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700 !important;
+  border: none !important;
+  border-radius: 999px !important;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-pop);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease) !important;
+}
+
+.package-card button::before,
+.attraction-info button::before, .cafe-info button::before,
+.btn-booking-submit::before, .btn-booking-cta::before,
+.btn-pkg-select::before, .btn-pkg-modal-book::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -60%;
+  width: 40%; height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255,255,255,0.55), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s var(--ease);
+}
+
+.package-card button:hover::before,
+.attraction-info button:hover::before, .cafe-info button:hover::before,
+.btn-booking-submit:hover::before, .btn-booking-cta:hover::before,
+.btn-pkg-select:hover::before, .btn-pkg-modal-book:hover::before { left: 130%; }
+
+.package-card button:hover, .attraction-info button:hover, .cafe-info button:hover,
+.btn-booking-submit:hover:not(:disabled), .btn-booking-cta:hover,
+.btn-pkg-select:hover, .btn-pkg-modal-book:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 16px 30px -10px rgba(255, 107, 91, 0.6) !important;
+}
+
+.booking-cta-strip {
+  background: linear-gradient(135deg, #e8fbf8 0%, #fff5e6 100%) !important;
+  border-radius: 28px;
+  margin: 32px 20px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.booking-cta-icons i { color: var(--sea-deep) !important; }
+
+/* ---------- cards (packages / attractions / cafes) ---------- */
+.package-card, .attraction-card, .cafe-card, .booking-pkg-card {
+  background: var(--paper) !important;
+  border-radius: 22px !important;
+  box-shadow: var(--shadow-soft) !important;
+  border: 1px solid var(--line);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease) !important;
+}
+
+.package-card:hover, .attraction-card:hover, .cafe-card:hover, .booking-pkg-card:hover {
+  transform: translateY(-8px) rotate(-0.4deg);
+  box-shadow: 0 26px 44px -16px rgba(18, 184, 166, 0.4) !important;
+}
+
+.img-container, .package-card .img-container { border-radius: 22px 22px 0 0; }
+
+.package-card img, .attraction-card img, .cafe-card img {
+  transition: transform 0.6s var(--ease) !important;
+}
+
+.package-card:hover img, .attraction-card:hover img, .cafe-card:hover img {
+  transform: scale(1.12) rotate(0.5deg);
+}
+
+.card-meta {
+  display: inline-block;
+  color: var(--sea-deep) !important;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+/* ---------- attraction-item / info-section / market-card ---------- */
+.attraction-item, .info-section, .market-card {
+  background: var(--paper) !important;
+  border-radius: 24px !important;
+  box-shadow: var(--shadow-soft) !important;
+  border: 1px solid var(--line);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.attraction-item:hover, .market-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 44px -18px rgba(255, 107, 91, 0.35) !important;
+}
+
+.info-section h3 i, .attraction-item h3 { color: var(--ink) !important; }
+.info-section h3 i { color: var(--coral) !important; }
+
+/* ---------- category buttons (attractions hub) ---------- */
+.large-button {
+  background: var(--ink) !important;
+  border-radius: 24px !important;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease) !important;
+}
+
+.large-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11,37,69,0) 30%, rgba(11,37,69,0.75) 100%);
+  z-index: 0;
+}
+
+.large-button:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 30px 50px -18px rgba(11, 37, 69, 0.55) !important;
+}
+
+.large-button:hover img { transform: scale(1.08); }
+.large-button img { transition: transform 0.6s var(--ease); }
+
+/* ---------- forms ---------- */
+.form-group input, .form-group textarea, .booking-form input, .booking-form select, .booking-form textarea {
+  border-radius: 14px !important;
+  border: 1.5px solid var(--line) !important;
+  background: var(--cream) !important;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease) !important;
+}
+
+.form-group input:focus, .form-group textarea:focus,
+.booking-form select:focus, .booking-form input:focus, .booking-form textarea:focus {
+  border-color: var(--sea) !important;
+  background: #fff !important;
+  box-shadow: 0 0 0 4px rgba(18, 184, 166, 0.18) !important;
+}
+
+.booking-tab {
+  border-radius: 16px !important;
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease), color 0.25s var(--ease) !important;
+}
+
+.booking-tab:hover { transform: translateY(-3px); border-color: var(--sea) !important; }
+
+.booking-tab-active {
+  background: var(--grad-sea) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+  box-shadow: 0 10px 20px -8px rgba(12, 143, 131, 0.55);
+}
+
+.booking-tab-active i { color: #fff !important; }
+.booking-tab i { color: var(--sea-deep) !important; }
+
+.booking-pkg-card-selected { border-color: var(--coral) !important; }
+
+/* ---------- footer ---------- */
+.site-footer {
+  background: linear-gradient(160deg, var(--ink) 0%, #0a1c33 100%) !important;
+  border-radius: 32px 32px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 0; right: 0;
+  height: 6px;
+  background: var(--grad-sunset);
+}
+
+.site-footer a {
+  color: var(--sun) !important;
+  transition: color 0.25s var(--ease);
+}
+
+.site-footer a:hover { color: #fff !important; }
+
+/* ---------- scroll reveal (paired with js/motion.js) ---------- */
+.js .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+.js .reveal-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stagger children of grids */
+.js .packages .reveal-on-scroll:nth-child(2),
+.js .attractions-grid .reveal-on-scroll:nth-child(2),
+.js .cafes-grid .reveal-on-scroll:nth-child(2) { transition-delay: 0.08s; }
+.js .packages .reveal-on-scroll:nth-child(3),
+.js .attractions-grid .reveal-on-scroll:nth-child(3),
+.js .cafes-grid .reveal-on-scroll:nth-child(3) { transition-delay: 0.16s; }
+.js .packages .reveal-on-scroll:nth-child(4),
+.js .attractions-grid .reveal-on-scroll:nth-child(4),
+.js .cafes-grid .reveal-on-scroll:nth-child(4) { transition-delay: 0.24s; }
+
+/* ---------- floating back-to-top ---------- */
+.scape-top-btn {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  display: grid;
+  place-items: center;
+  background: var(--grad-sunset);
+  color: var(--ink);
+  font-size: 1.1rem;
+  box-shadow: var(--shadow-pop);
+  cursor: pointer;
+  z-index: 60;
+  opacity: 0;
+  transform: translateY(16px) scale(0.85);
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+  animation: floatY 3.4s ease-in-out infinite;
+}
+
+.scape-top-btn.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.scape-top-btn:hover { transform: translateY(-4px) scale(1.08); }
+
+/* ---------- motion respect ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  body::before, body::after { display: none; }
+}
+
+@media (max-width: 768px) {
+  body::before, body::after { opacity: 0.22; filter: blur(50px); }
+  .site-header.site-header--home { border-radius: 0 0 22px 22px; }
+  .site-footer { border-radius: 22px 22px 0 0; }
+  .scape-top-btn { right: 14px; bottom: 14px; width: 44px; height: 44px; }
+}
