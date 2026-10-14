@@ -1,0 +1,215 @@
+/* ============================================================
+   SATUN SCAPE — admin dashboard (bookings & messages)
+   Deliberately plain: this is an internal tool for one site
+   owner, not a public-facing page, so it borrows the site's
+   colors/fonts but skips all the marketing polish.
+   ============================================================ */
+
+.admin-body {
+  background: var(--cream, #faf6ef);
+  font-family: 'Prompt', 'DM Sans', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.admin-login-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.admin-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  background: #fff;
+  border-bottom: 1px solid var(--line, #e7ddcd);
+  padding: 14px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.admin-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--ink, #2b2118);
+}
+
+.admin-topbar-brand img { width: 26px; height: 26px; }
+
+.admin-topbar-nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.admin-topbar-nav a {
+  color: var(--ink-soft, #6b5f4f);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-topbar-nav a:hover { color: var(--sea, #12b8a6); }
+
+.admin-nav-count {
+  background: var(--coral, #ef6461);
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  padding: 1px 7px;
+  font-weight: 700;
+}
+
+.admin-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 24px 70px;
+}
+
+.admin-notice {
+  background: #e6f8f4;
+  border: 1px solid #9fe0d3;
+  color: #0e6b5c;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.admin-stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.admin-stat-card {
+  background: #fff;
+  border: 1px solid var(--line, #e7ddcd);
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-stat-number {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink, #2b2118);
+}
+
+.admin-stat-label {
+  font-size: 0.8rem;
+  color: var(--ink-soft, #6b5f4f);
+}
+
+.admin-section { margin-bottom: 44px; }
+
+.admin-section h2 {
+  font-family: 'Kanit', sans-serif;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-empty {
+  color: var(--ink-soft, #6b5f4f);
+  font-style: italic;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid var(--line, #e7ddcd);
+  border-radius: 14px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 780px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line, #e7ddcd);
+}
+
+.admin-table th {
+  background: #f6f1e8;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.admin-table tbody tr:last-child td { border-bottom: none; }
+.admin-table tbody tr:hover { background: #fbf9f4; }
+
+.admin-muted { color: var(--ink-soft, #6b5f4f); font-size: 0.8rem; }
+
+.admin-details-cell, .admin-message-cell {
+  max-width: 260px;
+  font-size: 0.8rem;
+}
+
+.admin-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.admin-badge-pending { background: #fff3cd; color: #8a6600; }
+.admin-badge-confirmed { background: #e6f8f4; color: #0e6b5c; }
+.admin-badge-cancelled { background: #fde4e1; color: #a3352f; }
+
+.admin-inline-form select,
+.admin-inline-form .admin-small-btn {
+  font-family: inherit;
+  font-size: 0.82rem;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--line, #e7ddcd);
+  background: #fff;
+  cursor: pointer;
+}
+
+.admin-footnote {
+  margin-top: 30px;
+  font-size: 0.78rem;
+  color: var(--ink-soft, #6b5f4f);
+  max-width: 700px;
+}
+
+.admin-footnote code {
+  background: #f0e9db;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .admin-topbar { padding: 12px 16px; }
+  .admin-main { padding: 20px 14px 50px; }
+}

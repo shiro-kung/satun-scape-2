@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Book tours, car hire, boat transfers, and accommodation in Satun Province, Thailand.">
+    <title id="page-title">Book · Satun Scape</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modern-theme.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/emergency.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600&display=swap">
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Book tours & travel · Satun Scape">
+    <meta property="og:description" content="Reserve island tours, hire a car, book boat transfers, or request a hotel stay in Satun Province.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Ao_Ta_Lo_Woo_Pier%2C_Ko_Tarutao_-_Tarutao_National_Park_%2816750772789%29.jpg/1200px-Ao_Ta_Lo_Woo_Pier%2C_Ko_Tarutao_-_Tarutao_National_Park_%2816750772789%29.jpg">
+    <meta property="og:url" content="https://satunscape.example.com/booking.html">
+    <meta property="og:site_name" content="Satun Scape">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book tours & travel · Satun Scape">
+    <meta name="twitter:description" content="Reserve island tours, hire a car, book boat transfers, or request a hotel stay in Satun Province.">
+    <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Ao_Ta_Lo_Woo_Pier%2C_Ko_Tarutao_-_Tarutao_National_Park_%2816750772789%29.jpg/1200px-Ao_Ta_Lo_Woo_Pier%2C_Ko_Tarutao_-_Tarutao_National_Park_%2816750772789%29.jpg">
+</head>
+<body class="page-booking">
+    <div class="page-enter-overlay" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content" id="skip-link">Skip to content</a>
+    <header class="site-header site-header--home">
+        <div class="category-hero-banner" aria-hidden="true"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Ao_Ta_Lo_Woo_Pier%2C_Ko_Tarutao_-_Tarutao_National_Park_%2816750772789%29.jpg/1200px-Ao_Ta_Lo_Woo_Pier%2C_Ko_Tarutao_-_Tarutao_National_Park_%2816750772789%29.jpg" alt=""></div>
+                <div class="site-nav">
+            <a href="index.html" class="site-nav-brand"><img src="favicon.svg" alt=""><span>Satun Scape</span></a>
+            <nav class="nav-desktop" aria-label="Main navigation">
+                <ul class="nav-desktop-list">
+                <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+                <li><a href="attractions.html" class="nav-link" id="nav-attractions">Attractions</a></li>
+                <li><a href="accommodation.html" class="nav-link" id="nav-accommodation">Stay</a></li>
+                <li><a href="booking.html" class="nav-link active" id="nav-booking">Book</a></li>
+                <li><a href="cafes.html" class="nav-link" id="nav-cafes">Eat & drink</a></li>
+                <li><a href="market.html" class="nav-link" id="nav-market">Markets</a></li>
+                <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+                <li><a href="emergency.html" class="nav-link nav-emergency-link" id="nav-emergency-desktop"><i class="fas fa-kit-medical" aria-hidden="true"></i> <span data-i18n="nav_emergency">Emergency</span></a></li>
+                <li><a href="login.html" class="nav-link nav-account-link" id="nav-account-desktop"><i class="fas fa-user" aria-hidden="true"></i> Log in</a></li>
+                </ul>
+                <div class="lang-switch" role="toolbar" aria-label="Language">
+                    <button type="button" class="lang-switch-toggle" aria-expanded="false" aria-haspopup="true">
+                        <i class="fas fa-globe" aria-hidden="true"></i> <span class="lang-switch-current">EN</span> <i class="fas fa-chevron-down lang-switch-caret" aria-hidden="true"></i>
+                    </button>
+                    <div class="lang-switch-menu" hidden>
+                        <button type="button" class="lang-btn" data-lang="en" data-lang-short="EN">English</button>
+                        <button type="button" class="lang-btn" data-lang="th" data-lang-short="ไทย">ไทย</button>
+                        <button type="button" class="lang-btn" data-lang="zh" data-lang-short="中文">中文</button>
+                        <button type="button" class="lang-btn" data-lang="tl" data-lang-short="TL">Tagalog</button>
+                        <button type="button" class="lang-btn" data-lang="ms" data-lang-short="MY">Bahasa Malaysia</button>
+                        <button type="button" class="lang-btn" data-lang="ar" data-lang-short="AR">العربية</button>
+                        <button type="button" class="lang-btn" data-lang="es" data-lang-short="ES">Español</button>
+                        <button type="button" class="lang-btn" data-lang="ko" data-lang-short="KO">한국어</button>
+                        <button type="button" class="lang-btn" data-lang="ja" data-lang-short="JA">日本語</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-mobile-controls">
+                <div class="lang-switch" role="toolbar" aria-label="Language">
+                    <button type="button" class="lang-switch-toggle" aria-expanded="false" aria-haspopup="true">
+                        <i class="fas fa-globe" aria-hidden="true"></i> <span class="lang-switch-current">EN</span> <i class="fas fa-chevron-down lang-switch-caret" aria-hidden="true"></i>
+                    </button>
+                    <div class="lang-switch-menu" hidden>
+                        <button type="button" class="lang-btn" data-lang="en" data-lang-short="EN">English</button>
+                        <button type="button" class="lang-btn" data-lang="th" data-lang-short="ไทย">ไทย</button>
+                        <button type="button" class="lang-btn" data-lang="zh" data-lang-short="中文">中文</button>
+                        <button type="button" class="lang-btn" data-lang="tl" data-lang-short="TL">Tagalog</button>
+                        <button type="button" class="lang-btn" data-lang="ms" data-lang-short="MY">Bahasa Malaysia</button>
+                        <button type="button" class="lang-btn" data-lang="ar" data-lang-short="AR">العربية</button>
+                        <button type="button" class="lang-btn" data-lang="es" data-lang-short="ES">Español</button>
+                        <button type="button" class="lang-btn" data-lang="ko" data-lang-short="KO">한국어</button>
+                        <button type="button" class="lang-btn" data-lang="ja" data-lang-short="JA">日本語</button>
+                    </div>
+                </div>
+                <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+                    <span class="mobile-nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="mobile-nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="mobile-nav-toggle-bar" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+        <button type="button" class="mobile-nav-backdrop" id="mobile-nav-backdrop" hidden aria-label="Close menu"></button>
+        <nav class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile navigation" hidden>
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+                <li><a href="attractions.html" class="nav-link" data-page="attractions">Attractions</a></li>
+                <li><a href="accommodation.html" class="nav-link" data-page="accommodation">Stay</a></li>
+                <li><a href="booking.html" class="nav-link active" data-page="booking">Book</a></li>
+                <li><a href="cafes.html" class="nav-link" data-page="cafes">Eat & drink</a></li>
+                <li><a href="market.html" class="nav-link" data-page="market">Markets</a></li>
+                <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+                <li><a href="emergency.html" class="nav-link nav-emergency-link" id="nav-emergency-mobile"><i class="fas fa-kit-medical" aria-hidden="true"></i> <span data-i18n="nav_emergency">Emergency</span></a></li>
+                <li><a href="login.html" class="nav-link nav-account-link" id="nav-account-mobile"><i class="fas fa-user" aria-hidden="true"></i> Log in</a></li>
+            </ul>
+            <div class="mobile-nav-lang-section">
+                <p class="mobile-nav-lang-label">Language</p>
+                <div class="mobile-nav-lang-grid">
+                    <button type="button" class="lang-btn" data-lang="en" data-lang-short="EN">English</button>
+                    <button type="button" class="lang-btn" data-lang="th" data-lang-short="ไทย">ไทย</button>
+                    <button type="button" class="lang-btn" data-lang="zh" data-lang-short="中文">中文</button>
+                    <button type="button" class="lang-btn" data-lang="tl" data-lang-short="TL">Tagalog</button>
+                    <button type="button" class="lang-btn" data-lang="ms" data-lang-short="MY">Bahasa Malaysia</button>
+                    <button type="button" class="lang-btn" data-lang="ar" data-lang-short="AR">العربية</button>
+                    <button type="button" class="lang-btn" data-lang="es" data-lang-short="ES">Español</button>
+                    <button type="button" class="lang-btn" data-lang="ko" data-lang-short="KO">한국어</button>
+                    <button type="button" class="lang-btn" data-lang="ja" data-lang-short="JA">日本語</button>
+                </div>
+            </div>
+        </nav>
+        <div class="slogan-ribbon"><i class="fas fa-heart" aria-hidden="true"></i> <span data-i18n="site_slogan">No one knows Satun like the people of Satun</span></div>
+        <div class="hero-home">
+            <div class="crumb-row"><a href="index.html" data-i18n="crumb_home">Home</a> <i class="fas fa-chevron-right"></i> <span class="crumb-current" data-i18n="crumb_book">Book</span></div>
+            <p class="hero-eyebrow" id="hero-eyebrow">Plan your trip</p>
+            <h1 id="hero-title">Book tours & travel</h1>
+            <p class="hero-lead" id="hero-lead">Reserve island tours, hire a car, book boat transfers, or request a hotel stay. We confirm by email within 1–2 business days.</p>
+        </div>
+    </header>
+
+    <div class="visitor-strip" aria-label="Visitor notes">
+        <div class="visitor-strip-inner">
+            <span class="visitor-pill" id="visitor-pill-1"></span>
+            <span class="visitor-pill" id="visitor-pill-2"></span>
+            <span class="visitor-pill" id="visitor-pill-3"></span>
+            <span class="visitor-pill" id="visitor-pill-4"></span>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <div class="trust-badge-row">
+            <div class="trust-badge">
+                <i class="fas fa-envelope-open-text" aria-hidden="true"></i>
+                <span><strong data-i18n="trust1_title">Fast reply</strong><span data-i18n="trust1_desc">Confirmation within 1–2 business days</span></span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-hand-holding-usd" aria-hidden="true"></i>
+                <span><strong data-i18n="trust2_title">No upfront charge</strong><span data-i18n="trust2_desc">Requests are non-binding until confirmed</span></span>
+            </div>
+            <div class="trust-badge">
+                <i class="fas fa-headset" aria-hidden="true"></i>
+                <span><strong data-i18n="trust3_title">Real replies</strong><span data-i18n="trust3_desc">A person reviews every request, not a bot</span></span>
+            </div>
+        </div>
+        <div class="content content-booking">
+            <p class="booking-notice" id="booking-notice"><i class="fas fa-info-circle" aria-hidden="true"></i> Requests are non-binding until confirmed. Peak season (Nov–Apr): book early for boats and park permits.</p>
+
+            <section class="booking-packages-section" aria-labelledby="pkg-heading">
+                <h2 id="pkg-heading" class="booking-packages-title">Recommended packages</h2>
+                <p id="pkg-sub" class="booking-packages-sub">Popular itineraries — tap a package to view full details, then book below.</p>
+                <div class="booking-packages-grid">
+                    <article class="booking-pkg-card" data-pkg-id="7" data-type="tour" data-tour-package="bulone-1day" tabindex="0" role="button" aria-label="View Koh Bulone day trip details">
+                        <span class="booking-pkg-badge booking-pkg-badge-tour" id="pkg-7-badge">Tour</span>
+                        <div class="booking-pkg-img">
+                            <img src="https://f.ptcdn.info/349/071/000/qilu4au7oowsHJu9j3E-o.jpg" alt="Koh Bulon island beach" loading="lazy">
+                        </div>
+                        <h3 id="pkg-7-title">Koh Bulone Snorkel Day Trip</h3>
+                        <p class="booking-pkg-meta" id="pkg-7-meta">1 day · Pakbara pier · Taweesub Speedboat</p>
+                        <p class="booking-pkg-desc" id="pkg-7-desc">Two snorkel stops at Koh Bulone Mai Phai and Hin Khaw, free kayak & SUP, lunch and fruit included.</p>
+                        <p class="booking-pkg-price" id="pkg-7-price">฿1,760 (Thai) · ฿1,860 (foreigner)</p>
+                        <button type="button" class="btn-pkg-select" id="pkg-7-btn">View details</button>
+                    </article>
+                    <article class="booking-pkg-card" data-pkg-id="8" data-type="tour" data-tour-package="bulone-2d1n" tabindex="0" role="button" aria-label="View Koh Bulone 2 day 1 night trip details">
+                        <span class="booking-pkg-badge booking-pkg-badge-tour" id="pkg-8-badge">Tour</span>
+                        <div class="booking-pkg-img">
+                            <img src="https://cbtthailand.dasta.or.th/upload-file-api/Resources/RelateAttraction/Images/RAT910183/1.jpeg" alt="Koh Bulon island" loading="lazy">
+                        </div>
+                        <h3 id="pkg-8-title">Koh Bulone Island 2D1N</h3>
+                        <p class="booking-pkg-meta" id="pkg-8-meta">2 days 1 night · Seasatun Travel</p>
+                        <p class="booking-pkg-desc" id="pkg-8-desc">Overnight on Koh Bulone with snorkeling at Mai Phai and Bulone Le, kayaking, and a beach dinner.</p>
+                        <p class="booking-pkg-price" id="pkg-8-price">Contact for current rate</p>
+                        <button type="button" class="btn-pkg-select" id="pkg-8-btn">View details</button>
+                    </article>
+                    <article class="booking-pkg-card" data-pkg-id="9" data-type="tour" data-tour-package="bulone-3d2n" tabindex="0" role="button" aria-label="View Koh Bulone 3 day 2 night trip details">
+                        <span class="booking-pkg-badge booking-pkg-badge-tour" id="pkg-9-badge">Tour</span>
+                        <div class="booking-pkg-img">
+                            <img src="https://ik.imagekit.io/ferryadvice/uploads/island/1509273407.jpg" alt="Koh Bulon island" loading="lazy">
+                        </div>
+                        <h3 id="pkg-9-title">Koh Bulone Island 3D2N</h3>
+                        <p class="booking-pkg-meta" id="pkg-9-meta">3 days 2 nights · Seasatun Travel</p>
+                        <p class="booking-pkg-desc" id="pkg-9-desc">A slower island stay with a full free day for kayaking or the island's nature trails.</p>
+                        <p class="booking-pkg-price" id="pkg-9-price">Contact for current rate</p>
+                        <button type="button" class="btn-pkg-select" id="pkg-9-btn">View details</button>
+                    </article>
+                    <article class="booking-pkg-card" data-pkg-id="10" data-type="tour" data-tour-package="lipe-2d1n" tabindex="0" role="button" aria-label="View Ko Lipe 2 day 1 night trip details">
+                        <span class="booking-pkg-badge booking-pkg-badge-tour" id="pkg-10-badge">Tour</span>
+                        <div class="booking-pkg-img">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Koh_Lipe_island_coast.jpg" alt="Ko Lipe island coast" loading="lazy">
+                        </div>
+                        <h3 id="pkg-10-title">Ko Lipe Island Hop 2D1N</h3>
+                        <p class="booking-pkg-meta" id="pkg-10-meta">2 days 1 night · Seasatun Travel</p>
+                        <p class="booking-pkg-desc" id="pkg-10-desc">Same-day longtail snorkeling around Ko Rawi, Ko Hin Ngam, Jabang channel and Ko Adang.</p>
+                        <p class="booking-pkg-price" id="pkg-10-price">Contact for current rate</p>
+                        <button type="button" class="btn-pkg-select" id="pkg-10-btn">View details</button>
+                    </article>
+                    <article class="booking-pkg-card" data-pkg-id="11" data-type="tour" data-tour-package="lipe-3d2n" tabindex="0" role="button" aria-label="View Ko Lipe 3 day 2 night trip details">
+                        <span class="booking-pkg-badge booking-pkg-badge-tour" id="pkg-11-badge">Tour</span>
+                        <div class="booking-pkg-img">
+                            <img src="https://images.squarespace-cdn.com/content/v1/6511cfbd12731e772c6b9fb1/8eba821c-f919-4676-9ea6-f1151580bfe4/Article+2+-+Koh+Lipe.jpg" alt="Ko Lipe island" loading="lazy">
+                        </div>
+                        <h3 id="pkg-11-title">Ko Lipe Island Hop 3D2N</h3>
+                        <p class="booking-pkg-meta" id="pkg-11-meta">3 days 2 nights · Seasatun Travel</p>
+                        <p class="booking-pkg-desc" id="pkg-11-desc">A full snorkeling day around Ko Adang, Ko Rawi, Ko Hin Ngam, Ko Yang and Jabang channel, with flexible return times.</p>
+                        <p class="booking-pkg-price" id="pkg-11-price">Contact for current rate</p>
+                        <button type="button" class="btn-pkg-select" id="pkg-11-btn">View details</button>
+                    </article>
+                    <article class="booking-pkg-card" data-pkg-id="12" data-type="tour" data-tour-package="lipe-4d3n" tabindex="0" role="button" aria-label="View Ko Lipe 4 day 3 night trip details">
+                        <span class="booking-pkg-badge booking-pkg-badge-tour" id="pkg-12-badge">Tour</span>
+                        <div class="booking-pkg-img">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQJz4rpsVQfQYvuF9f6OHNndLHlVpqyjm3Bw&s" alt="Ko Lipe island" loading="lazy">
+                        </div>
+                        <h3 id="pkg-12-title">Ko Lipe Island Hop 4D3N</h3>
+                        <p class="booking-pkg-meta" id="pkg-12-meta">4 days 3 nights · Seasatun Travel</p>
+                        <p class="booking-pkg-desc" id="pkg-12-desc">Longer Lipe stay with an outer-island snorkel day plus a free day to climb Pha Chado viewpoint on Ko Adang.</p>
+                        <p class="booking-pkg-price" id="pkg-12-price">Contact for current rate</p>
+                        <button type="button" class="btn-pkg-select" id="pkg-12-btn">View details</button>
+                    </article>
+                    <article class="booking-pkg-card" data-pkg-id="13" data-type="tour" data-tour-package="langu-songthaew" tabindex="0" role="button" aria-label="View La-ngu day tour details">
+                        <span class="booking-pkg-badge booking-pkg-badge-tour" id="pkg-13-badge">Tour</span>
+                        <div class="booking-pkg-img">
+                            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bridge%20to%20Time%20traveling%20zone%20position.jpg" alt="La-ngu district landmark" loading="lazy">
+                        </div>
+                        <h3 id="pkg-13-title">La-ngu Nature &amp; Culture Day Tour</h3>
+                        <p class="booking-pkg-meta" id="pkg-13-meta">1 day · Classic songthaew · Seasatun Travel</p>
+                        <p class="booking-pkg-desc" id="pkg-13-desc">Khao Daeng viewpoint, Urai Thong Cave, a nature trail, local lunch, and the Fisheries Department aquarium.</p>
+                        <p class="booking-pkg-price" id="pkg-13-price">Contact for current rate</p>
+                        <button type="button" class="btn-pkg-select" id="pkg-13-btn">View details</button>
+                    </article>
+                    <article class="booking-pkg-card" data-pkg-id="14" data-type="stay" data-stay-property="lipe-mountain-resort" data-stay-nights="2" tabindex="0" role="button" aria-label="View Ko Lipe Mountain Resort details">
+                        <span class="booking-pkg-badge booking-pkg-badge-stay" id="pkg-14-badge">Stay</span>
+                        <div class="booking-pkg-img">
+                            <img src="https://ทัวร์เกาะ.com/wp-content/uploads/2020/09/koh-lipe-9-1.jpg" alt="Ko Lipe island" loading="lazy">
+                        </div>
+                        <h3 id="pkg-14-title">Ko Lipe Mountain Resort</h3>
+                        <p class="booking-pkg-meta" id="pkg-14-meta">2 nights · Deluxe Garden room</p>
+                        <p class="booking-pkg-desc" id="pkg-14-desc">Pool resort on Ko Lipe with van, speedboat transfer, breakfast and a snorkeling trip included.</p>
+                        <p class="booking-pkg-price" id="pkg-14-price">From ฿3,450 / 2D1N (weekday rate)</p>
+                        <button type="button" class="btn-pkg-select" id="pkg-14-btn">View details</button>
+                    </article>
+                </div>
+            </section>
+
+            <div class="booking-tabs" role="tablist" aria-label="Booking categories">
+                <button type="button" class="booking-tab booking-tab-active" role="tab" aria-selected="true" aria-controls="panel-tour" id="tab-tour" data-booking-type="tour">
+                    <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                    <span id="tab-label-tour">Tours</span>
+                </button>
+                <button type="button" class="booking-tab" role="tab" aria-selected="false" aria-controls="panel-car" id="tab-car" data-booking-type="car">
+                    <i class="fas fa-car" aria-hidden="true"></i>
+                    <span id="tab-label-car">Car hire</span>
+                </button>
+                <button type="button" class="booking-tab" role="tab" aria-selected="false" aria-controls="panel-boat" id="tab-boat" data-booking-type="boat">
+                    <i class="fas fa-ship" aria-hidden="true"></i>
+                    <span id="tab-label-boat">Boat</span>
+                </button>
+                <button type="button" class="booking-tab" role="tab" aria-selected="false" aria-controls="panel-stay" id="tab-stay" data-booking-type="stay">
+                    <i class="fas fa-bed" aria-hidden="true"></i>
+                    <span id="tab-label-stay">Stay</span>
+                </button>
+            </div>
+
+            <!-- Tour booking -->
+            <section class="booking-panel booking-panel-active" id="panel-tour" role="tabpanel" aria-labelledby="tab-tour">
+                <h2 id="form-title-tour">Book a tour</h2>
+                <p class="booking-panel-desc" id="form-desc-tour">Day trips and multi-day packages around Tarutao, caves, waterfalls, and town heritage walks.</p>
+                <form class="booking-form" id="form-tour" data-type="tour" novalidate>
+                    <input type="hidden" name="csrf_token" value="">
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="form-tour-website">Leave this field empty</label>
+                        <input type="text" id="form-tour-website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tour-package" id="label-tour-package">Tour package</label>
+                            <select id="tour-package" name="package" required>
+                                <option value="bulone-1day">Koh Bulone snorkel day trip</option>
+                                <option value="bulone-2d1n">Koh Bulone 2D1N</option>
+                                <option value="bulone-3d2n">Koh Bulone 3D2N</option>
+                                <option value="lipe-2d1n">Ko Lipe island hop 2D1N</option>
+                                <option value="lipe-3d2n">Ko Lipe island hop 3D2N</option>
+                                <option value="lipe-4d3n">Ko Lipe island hop 4D3N</option>
+                                <option value="langu-songthaew">La-ngu nature & culture day tour</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="tour-date" id="label-tour-date">Preferred date</label>
+                            <input type="date" id="tour-date" name="date" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tour-adults" id="label-tour-adults">Adults</label>
+                            <input type="number" id="tour-adults" name="adults" min="1" max="30" value="2" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tour-children" id="label-tour-children">Children</label>
+                            <input type="number" id="tour-children" name="children" min="0" max="20" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="tour-pickup" id="label-tour-pickup">Pickup area</label>
+                            <select id="tour-pickup" name="pickup">
+                                <option value="satun-town">Satun town</option>
+                                <option value="pakbara">Pakbara pier</option>
+                                <option value="la-ngu">La-ngu</option>
+                                <option value="hotel">My hotel (specify in notes)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <fieldset class="booking-contact-fields">
+                        <legend id="legend-contact-tour">Your details</legend>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="tour-name" id="label-tour-name">Full name</label>
+                                <input type="text" id="tour-name" name="name" autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tour-email" id="label-tour-email">Email</label>
+                                <input type="email" id="tour-email" name="email" autocomplete="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tour-phone" id="label-tour-phone">Phone / WhatsApp</label>
+                                <input type="tel" id="tour-phone" name="phone" autocomplete="tel" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tour-nationality" id="label-tour-nationality">Nationality</label>
+                                <input type="text" id="tour-nationality" name="nationality" autocomplete="country-name" required>
+                                <p class="auth-form-hint" id="tour-nationality-hint">Some tours include national park entry, which is priced differently for Thai and foreign visitors.</p>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="tour-notes" id="label-tour-notes">Special requests</label>
+                        <textarea id="tour-notes" name="notes" rows="3" placeholder="Dietary needs, mobility, language preference…"></textarea>
+                    </div>
+                    <button type="submit" class="btn-booking-submit" id="btn-submit-tour">Request tour booking</button>
+                </form>
+            </section>
+
+            <!-- Car hire -->
+            <section class="booking-panel" id="panel-car" role="tabpanel" aria-labelledby="tab-car" hidden>
+                <h2 id="form-title-car">Rent a van</h2>
+                <p class="booking-panel-desc" id="form-desc-car">Operated by Sea@Holiday — shared airport transfers or a private van charter, with or without driver.</p>
+                <form class="booking-form" id="form-car" data-type="car" novalidate>
+                    <input type="hidden" name="csrf_token" value="">
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="form-car-website">Leave this field empty</label>
+                        <input type="text" id="form-car-website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="car-vehicle" id="label-car-vehicle">Van size</label>
+                            <select id="car-vehicle" name="vehicle" required>
+                                <option value="standard-12">Standard van · 12 seats</option>
+                                <option value="vip-10">VIP van · 10 seats</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="car-service" id="label-car-service">Service type</label>
+                            <select id="car-service" name="service_type" required>
+                                <option value="joined-airport">Shared airport transfer — Hat Yai ↔ Pakbara pier (฿250/person)</option>
+                                <option value="charter-fuel-self">Private charter — fuel paid separately, driver fee only</option>
+                                <option value="charter-all-in">Private charter — driver + fuel included</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="car-pickup-date" id="label-car-pickup-date">Pickup date</label>
+                            <input type="date" id="car-pickup-date" name="pickup_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="car-pickup-time" id="label-car-pickup-time">Pickup time</label>
+                            <input type="time" id="car-pickup-time" name="pickup_time" value="09:00" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="car-return-date" id="label-car-return-date">Return date (charter only)</label>
+                            <input type="date" id="car-return-date" name="return_date">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="car-location" id="label-car-location">Pickup / drop-off</label>
+                        <input type="text" id="car-location" name="location" placeholder="Hat Yai airport, hotel name, Pakbara pier…" required>
+                        <p class="auth-form-hint" id="car-location-hint">Private charters can run from the southernmost to the northernmost point of the province — the van is based in Satun. Charter rates start from ฿2,500/day and vary by distance.</p>
+                    </div>
+                    <fieldset class="booking-contact-fields">
+                        <legend id="legend-contact-car">Your details</legend>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="car-name" id="label-car-name">Full name</label>
+                                <input type="text" id="car-name" name="name" autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="car-email" id="label-car-email">Email</label>
+                                <input type="email" id="car-email" name="email" autocomplete="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="car-phone" id="label-car-phone">Phone</label>
+                                <input type="tel" id="car-phone" name="phone" autocomplete="tel" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="car-notes" id="label-car-notes">Notes</label>
+                        <textarea id="car-notes" name="notes" rows="2"></textarea>
+                    </div>
+                    <button type="submit" class="btn-booking-submit" id="btn-submit-car">Send request to Sea@Holiday</button>
+                </form>
+            </section>
+
+            <!-- Boat -->
+            <section class="booking-panel" id="panel-boat" role="tabpanel" aria-labelledby="tab-boat" hidden>
+                <h2 id="form-title-boat">Book a boat</h2>
+                <p class="booking-panel-desc" id="form-desc-boat">Operated by Sea@Holiday — shared ferry seats or a private full-boat charter to Ko Lipe.</p>
+                <form class="booking-form" id="form-boat" data-type="boat" novalidate>
+                    <input type="hidden" name="csrf_token" value="">
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="form-boat-website">Leave this field empty</label>
+                        <input type="text" id="form-boat-website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="boat-route" id="label-boat-route">Route</label>
+                            <select id="boat-route" name="route" required>
+                                <option value="pakbara-lipe">Pakbara ↔ Ko Lipe (via Ko Tarutao &amp; Ko Khai)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="boat-service" id="label-boat-service">Service type</label>
+                            <select id="boat-service" name="service_type" required>
+                                <option value="joined">Shared seat — ฿1,400/person round trip (฿750 one-way)</option>
+                                <option value="charter-33">Private charter — 33-seat boat, ฿35,000</option>
+                                <option value="charter-45">Private charter — 45-seat boat, ฿49,000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="boat-date" id="label-boat-date">Departure date</label>
+                            <input type="date" id="boat-date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="boat-passengers" id="label-boat-passengers">Passengers</label>
+                            <input type="number" id="boat-passengers" name="passengers" min="1" max="45" value="2" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="boat-return" id="label-boat-return">Return trip</label>
+                            <select id="boat-return" name="return_trip">
+                                <option value="one-way">One way</option>
+                                <option value="round-trip">Round trip (same route)</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="boat-return-date-group">
+                            <label for="boat-return-date" id="label-boat-return-date">Return date</label>
+                            <input type="date" id="boat-return-date" name="return_date">
+                        </div>
+                    </div>
+                    <fieldset class="booking-contact-fields">
+                        <legend id="legend-contact-boat">Your details</legend>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="boat-name" id="label-boat-name">Full name</label>
+                                <input type="text" id="boat-name" name="name" autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="boat-email" id="label-boat-email">Email</label>
+                                <input type="email" id="boat-email" name="email" autocomplete="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="boat-phone" id="label-boat-phone">Phone</label>
+                                <input type="tel" id="boat-phone" name="phone" autocomplete="tel" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="boat-nationality" id="label-boat-nationality">Nationality</label>
+                                <input type="text" id="boat-nationality" name="nationality" autocomplete="country-name" required>
+                                <p class="auth-form-hint" id="boat-nationality-hint">Needed for the boat manifest and the immigration checkpoint on Ko Lipe, near the Malaysia border.</p>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="boat-notes" id="label-boat-notes">Luggage / notes</label>
+                        <textarea id="boat-notes" name="notes" rows="2" placeholder="Large bags, infants, motion sickness…"></textarea>
+                    </div>
+                    <button type="submit" class="btn-booking-submit" id="btn-submit-boat">Send request to Sea@Holiday</button>
+                </form>
+            </section>
+
+            <!-- Accommodation -->
+            <section class="booking-panel" id="panel-stay" role="tabpanel" aria-labelledby="tab-stay" hidden>
+                <h2 id="form-title-stay">Book accommodation</h2>
+                <p class="booking-panel-desc" id="form-desc-stay">Hotels and guesthouses in Satun town, La-ngu, and near Pakbara. See our <a href="accommodation.html">Stay page</a> for photos and maps.</p>
+                <form class="booking-form" id="form-stay" data-type="stay" novalidate>
+                    <input type="hidden" name="csrf_token" value="">
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="form-stay-website">Leave this field empty</label>
+                        <input type="text" id="form-stay-website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="stay-property" id="label-stay-property">Property</label>
+                            <select id="stay-property" name="property" required>
+                                <option value="one-boutique">The One Boutique Hotel · Satun town</option>
+                                <option value="satun-hill">Satun Hill Hotel · Satun town</option>
+                                <option value="lipe-mountain-resort">Ko Lipe Mountain Resort · Ko Lipe</option>
+                                <option value="any-town">Any hotel in Satun town (budget TBC)</option>
+                                <option value="la-ngu">Guesthouse in La-ngu</option>
+                                <option value="pakbara">Near Pakbara pier</option>
+                                <option value="other">Other (describe in notes)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="stay-rooms" id="label-stay-rooms">Rooms</label>
+                            <input type="number" id="stay-rooms" name="rooms" min="1" max="10" value="1" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="stay-checkin" id="label-stay-checkin">Check-in</label>
+                            <input type="date" id="stay-checkin" name="checkin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stay-checkout" id="label-stay-checkout">Check-out</label>
+                            <input type="date" id="stay-checkout" name="checkout" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stay-guests" id="label-stay-guests">Guests</label>
+                            <input type="number" id="stay-guests" name="guests" min="1" max="30" value="2" required>
+                        </div>
+                    </div>
+                    <fieldset class="booking-contact-fields">
+                        <legend id="legend-contact-stay">Your details</legend>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="stay-name" id="label-stay-name">Full name</label>
+                                <input type="text" id="stay-name" name="name" autocomplete="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stay-email" id="label-stay-email">Email</label>
+                                <input type="email" id="stay-email" name="email" autocomplete="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stay-phone" id="label-stay-phone">Phone</label>
+                                <input type="tel" id="stay-phone" name="phone" autocomplete="tel" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stay-nationality" id="label-stay-nationality">Nationality</label>
+                                <input type="text" id="stay-nationality" name="nationality" autocomplete="country-name" required>
+                                <p class="auth-form-hint" id="stay-nationality-hint">Thai law requires guesthouses to register foreign guests with immigration (TM.30).</p>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-group">
+                        <label for="stay-notes" id="label-stay-notes">Room preferences</label>
+                        <textarea id="stay-notes" name="notes" rows="2" placeholder="Twin/double, extra bed, late check-in…"></textarea>
+                    </div>
+                    <button type="submit" class="btn-booking-submit" id="btn-submit-stay">Request stay booking</button>
+                </form>
+            </section>
+
+            <aside class="booking-recent" id="booking-recent" aria-live="polite" hidden>
+                <h2 id="recent-heading">Your recent requests</h2>
+                <ul class="booking-recent-list" id="booking-recent-list"></ul>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p id="footer-text">&copy; 2026 Satun Scape · unofficial visitor guide · not a government site</p>
+        <p class="footer-note"><a href="contact.html" id="footer-link-contact">Contact</a> · <a href="https://www.tourismthailand.org/" target="_blank" rel="noopener noreferrer" id="footer-link-tourism">Tourism Thailand</a></p>
+    </footer>
+
+    <div class="booking-toast" id="booking-toast" role="status" aria-live="polite" hidden></div>
+
+    <div class="pkg-modal" id="pkg-modal" role="dialog" aria-modal="true" aria-labelledby="pkg-modal-title" hidden>
+        <div class="pkg-modal-backdrop" id="pkg-modal-backdrop"></div>
+        <div class="pkg-modal-dialog">
+            <button type="button" class="pkg-modal-close" id="pkg-modal-close" aria-label="Close">&times;</button>
+            <div class="pkg-modal-hero">
+                <img id="pkg-modal-img" src="" alt="" loading="lazy">
+                <span class="booking-pkg-badge" id="pkg-modal-badge"></span>
+            </div>
+            <div class="pkg-modal-body">
+                <h2 id="pkg-modal-title"></h2>
+                <p class="pkg-modal-meta" id="pkg-modal-meta"></p>
+                <p class="pkg-modal-price" id="pkg-modal-price"></p>
+                <p class="pkg-modal-overview" id="pkg-modal-overview"></p>
+                <div class="pkg-modal-facts">
+                    <div class="pkg-modal-fact">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <div>
+                            <strong id="pkg-modal-h-duration">Duration</strong>
+                            <span id="pkg-modal-duration"></span>
+                        </div>
+                    </div>
+                    <div class="pkg-modal-fact">
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                        <div>
+                            <strong id="pkg-modal-h-group">Group size</strong>
+                            <span id="pkg-modal-group"></span>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="pkg-modal-section-title" id="pkg-modal-h-itinerary">Itinerary</h3>
+                <ul class="pkg-modal-list" id="pkg-modal-itinerary"></ul>
+                <h3 class="pkg-modal-section-title" id="pkg-modal-h-includes">Included</h3>
+                <ul class="pkg-modal-list pkg-modal-list-check" id="pkg-modal-includes"></ul>
+                <h3 class="pkg-modal-section-title" id="pkg-modal-h-excludes">Not included</h3>
+                <ul class="pkg-modal-list pkg-modal-list-cross" id="pkg-modal-excludes"></ul>
+                <h3 class="pkg-modal-section-title" id="pkg-modal-h-bring">What to bring</h3>
+                <ul class="pkg-modal-list" id="pkg-modal-bring"></ul>
+                <p class="pkg-modal-notes"><strong id="pkg-modal-h-notes">Good to know</strong> <span id="pkg-modal-notes-text"></span></p>
+            </div>
+            <div class="pkg-modal-actions">
+                <button type="button" class="btn-pkg-modal-book" id="pkg-modal-book">Book this package</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/motion.js" defer></script>
+    <script src="js/lightbox.js" defer></script>
+    <script src="js/card-modal.js" defer></script>
+    <script src="js/trip-planner.js" defer></script>
+    <script src="js/page-transition.js" defer></script>
+    <script src="js/lang-transition.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/i18n-extra.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/package-details.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta name="description" content="Manage your Satun Scape account and view your booking history.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title id="page-title">My account · Satun Scape</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/modern-theme.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/emergency.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600&display=swap">
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="My account · Satun Scape">
+    <meta property="og:description" content="Manage your Satun Scape account and view your booking history.">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/8/8c/Koh_Lipe_island_coast.jpg">
+    <meta property="og:url" content="https://satunscape.example.com/account.html">
+    <meta property="og:site_name" content="Satun Scape">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My account · Satun Scape">
+    <meta name="twitter:description" content="Manage your Satun Scape account and view your booking history.">
+    <meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/8/8c/Koh_Lipe_island_coast.jpg">
+</head>
+<body class="page-account">
+    <div class="page-enter-overlay" aria-hidden="true"></div>
+    <a class="skip-link" href="#main-content" id="skip-link">Skip to content</a>
+    <header class="site-header site-header--home">
+        <div class="category-hero-banner" aria-hidden="true"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Koh_Lipe_island_coast.jpg" alt=""></div>
+                <div class="site-nav">
+            <a href="index.html" class="site-nav-brand"><img src="favicon.svg" alt=""><span>Satun Scape</span></a>
+            <nav class="nav-desktop" aria-label="Main navigation">
+                <ul class="nav-desktop-list">
+                <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+                <li><a href="attractions.html" class="nav-link" id="nav-attractions">Attractions</a></li>
+                <li><a href="accommodation.html" class="nav-link" id="nav-accommodation">Stay</a></li>
+                <li><a href="booking.html" class="nav-link" id="nav-booking">Book</a></li>
+                <li><a href="cafes.html" class="nav-link" id="nav-cafes">Eat & drink</a></li>
+                <li><a href="market.html" class="nav-link" id="nav-market">Markets</a></li>
+                <li><a href="contact.html" class="nav-link" id="nav-contact">Contact</a></li>
+                <li><a href="emergency.html" class="nav-link nav-emergency-link" id="nav-emergency-desktop"><i class="fas fa-kit-medical" aria-hidden="true"></i> <span data-i18n="nav_emergency">Emergency</span></a></li>
+                <li><a href="login.html" class="nav-link nav-account-link active" id="nav-account-desktop"><i class="fas fa-user" aria-hidden="true"></i> Log in</a></li>
+                </ul>
+                <div class="lang-switch" role="toolbar" aria-label="Language">
+                    <button type="button" class="lang-switch-toggle" aria-expanded="false" aria-haspopup="true">
+                        <i class="fas fa-globe" aria-hidden="true"></i> <span class="lang-switch-current">EN</span> <i class="fas fa-chevron-down lang-switch-caret" aria-hidden="true"></i>
+                    </button>
+                    <div class="lang-switch-menu" hidden>
+                        <button type="button" class="lang-btn" data-lang="en" data-lang-short="EN">English</button>
+                        <button type="button" class="lang-btn" data-lang="th" data-lang-short="ไทย">ไทย</button>
+                        <button type="button" class="lang-btn" data-lang="zh" data-lang-short="中文">中文</button>
+                        <button type="button" class="lang-btn" data-lang="tl" data-lang-short="TL">Tagalog</button>
+                        <button type="button" class="lang-btn" data-lang="ms" data-lang-short="MY">Bahasa Malaysia</button>
+                        <button type="button" class="lang-btn" data-lang="ar" data-lang-short="AR">العربية</button>
+                        <button type="button" class="lang-btn" data-lang="es" data-lang-short="ES">Español</button>
+                        <button type="button" class="lang-btn" data-lang="ko" data-lang-short="KO">한국어</button>
+                        <button type="button" class="lang-btn" data-lang="ja" data-lang-short="JA">日本語</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-mobile-controls">
+                <div class="lang-switch" role="toolbar" aria-label="Language">
+                    <button type="button" class="lang-switch-toggle" aria-expanded="false" aria-haspopup="true">
+                        <i class="fas fa-globe" aria-hidden="true"></i> <span class="lang-switch-current">EN</span> <i class="fas fa-chevron-down lang-switch-caret" aria-hidden="true"></i>
+                    </button>
+                    <div class="lang-switch-menu" hidden>
+                        <button type="button" class="lang-btn" data-lang="en" data-lang-short="EN">English</button>
+                        <button type="button" class="lang-btn" data-lang="th" data-lang-short="ไทย">ไทย</button>
+                        <button type="button" class="lang-btn" data-lang="zh" data-lang-short="中文">中文</button>
+                        <button type="button" class="lang-btn" data-lang="tl" data-lang-short="TL">Tagalog</button>
+                        <button type="button" class="lang-btn" data-lang="ms" data-lang-short="MY">Bahasa Malaysia</button>
+                        <button type="button" class="lang-btn" data-lang="ar" data-lang-short="AR">العربية</button>
+                        <button type="button" class="lang-btn" data-lang="es" data-lang-short="ES">Español</button>
+                        <button type="button" class="lang-btn" data-lang="ko" data-lang-short="KO">한국어</button>
+                        <button type="button" class="lang-btn" data-lang="ja" data-lang-short="JA">日本語</button>
+                    </div>
+                </div>
+                <button type="button" class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+                    <span class="mobile-nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="mobile-nav-toggle-bar" aria-hidden="true"></span>
+                    <span class="mobile-nav-toggle-bar" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+        <button type="button" class="mobile-nav-backdrop" id="mobile-nav-backdrop" hidden aria-label="Close menu"></button>
+        <nav class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile navigation" hidden>
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+                <li><a href="attractions.html" class="nav-link" data-page="attractions">Attractions</a></li>
+                <li><a href="accommodation.html" class="nav-link" data-page="accommodation">Stay</a></li>
+                <li><a href="booking.html" class="nav-link" data-page="booking">Book</a></li>
+                <li><a href="cafes.html" class="nav-link" data-page="cafes">Eat & drink</a></li>
+                <li><a href="market.html" class="nav-link" data-page="market">Markets</a></li>
+                <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+                <li><a href="emergency.html" class="nav-link nav-emergency-link" id="nav-emergency-mobile"><i class="fas fa-kit-medical" aria-hidden="true"></i> <span data-i18n="nav_emergency">Emergency</span></a></li>
+                <li><a href="login.html" class="nav-link nav-account-link active" id="nav-account-mobile"><i class="fas fa-user" aria-hidden="true"></i> Log in</a></li>
+            </ul>
+            <div class="mobile-nav-lang-section">
+                <p class="mobile-nav-lang-label">Language</p>
+                <div class="mobile-nav-lang-grid">
+                    <button type="button" class="lang-btn" data-lang="en" data-lang-short="EN">English</button>
+                    <button type="button" class="lang-btn" data-lang="th" data-lang-short="ไทย">ไทย</button>
+                    <button type="button" class="lang-btn" data-lang="zh" data-lang-short="中文">中文</button>
+                    <button type="button" class="lang-btn" data-lang="tl" data-lang-short="TL">Tagalog</button>
+                    <button type="button" class="lang-btn" data-lang="ms" data-lang-short="MY">Bahasa Malaysia</button>
+                    <button type="button" class="lang-btn" data-lang="ar" data-lang-short="AR">العربية</button>
+                    <button type="button" class="lang-btn" data-lang="es" data-lang-short="ES">Español</button>
+                    <button type="button" class="lang-btn" data-lang="ko" data-lang-short="KO">한국어</button>
+                    <button type="button" class="lang-btn" data-lang="ja" data-lang-short="JA">日本語</button>
+                </div>
+            </div>
+        </nav>
+        <div class="slogan-ribbon"><i class="fas fa-heart" aria-hidden="true"></i> <span data-i18n="site_slogan">No one knows Satun like the people of Satun</span></div>
+        <div class="hero-home">
+            <div class="crumb-row"><a href="index.html" data-i18n="crumb_home">Home</a> <i class="fas fa-chevron-right"></i> <span class="crumb-current" data-i18n="account_title">My account</span></div>
+            <p class="hero-eyebrow" id="hero-eyebrow" data-i18n="account_eyebrow">Your Satun Scape</p>
+            <h1 id="hero-title" data-i18n="account_title">My account</h1>
+        </div>
+    </header>
+
+    <main id="main-content">
+    <div id="account-logged-in" hidden>
+        <div class="auth-shell">
+            <div class="auth-card">
+                <div class="account-header">
+                    <div class="account-avatar" id="account-avatar">?</div>
+                    <div>
+                        <h2 id="account-name">—</h2>
+                        <p id="account-email">—</p>
+                        <p id="account-phone">—</p>
+                        <p id="account-nationality">—</p>
+                    </div>
+                </div>
+                <button type="button" class="account-logout" id="account-logout-btn">
+                    <i class="fas fa-sign-out-alt" aria-hidden="true"></i> <span data-i18n="btn_logout">Log out</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="my-bookings-section">
+            <h3 data-i18n="my_bookings_title">My bookings</h3>
+            <div id="booking-history-list">
+                <p class="auth-loading" data-i18n="loading_bookings">Loading your bookings…</p>
+            </div>
+            <p style="text-align:center; margin-top: 18px;"><a href="booking.html" class="view-all-link"><span data-i18n="new_booking_link">Make a new booking</span> <i class="fas fa-arrow-right"></i></a></p>
+        </div>
+    </div>
+
+    <div id="account-guest" class="auth-guest-prompt" hidden>
+        <i class="fas fa-user-lock" aria-hidden="true"></i>
+        <h2 data-i18n="guest_title">You're not logged in</h2>
+        <p data-i18n="guest_desc">Log in to see your booking history, or create a free account to get started.</p>
+        <div class="hero-cta-row" style="justify-content:center;">
+            <a href="login.html" class="hero-btn hero-btn-primary" style="color:#fff; background: var(--grad-sea);">
+                <i class="fas fa-sign-in-alt" aria-hidden="true"></i> <span data-i18n="btn_login">Log in</span>
+            </a>
+            <a href="register.html" class="hero-btn hero-btn-ghost" style="background: var(--grad-sunset); color: var(--ink); border: none;">
+                <i class="fas fa-user-plus" aria-hidden="true"></i> <span data-i18n="btn_create_account">Create account</span>
+            </a>
+        </div>
+    </div>
+    </main>
+
+    <footer class="site-footer">
+        <p id="footer-text">&copy; 2026 Satun Scape · unofficial visitor guide · not a government site</p>
+        <p class="footer-note"><a href="contact.html" id="footer-link-contact">Contact</a> · <a href="https://www.tourismthailand.org/" target="_blank" rel="noopener noreferrer" id="footer-link-tourism">Tourism Thailand</a></p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+    <script src="js/motion.js" defer></script>
+    <script src="js/lightbox.js" defer></script>
+    <script src="js/card-modal.js" defer></script>
+    <script src="js/trip-planner.js" defer></script>
+    <script src="js/page-transition.js" defer></script>
+    <script src="js/lang-transition.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/i18n-extra.js" defer></script>
+    <script src="js/auth.js" defer></script>
+</body>
+</html>

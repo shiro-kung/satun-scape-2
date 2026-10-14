@@ -1,0 +1,560 @@
+/* ============================================================
+   SATUN SCAPE — navigation, split into two fully independent
+   implementations: desktop (inline links, no JS) and mobile
+   (hamburger + slide-in drawer, dedicated JS in js/nav.js).
+   Nothing in this file is shared between the two — each is
+   self-contained so a change to one can never break the other.
+   ============================================================ */
+
+:root {
+  --nav-ink: #0b2545;
+  --nav-sea: #12b8a6;
+  --nav-sea-deep: #0c8f83;
+  --nav-sun: #ffc93c;
+  --nav-coral: #ff6b5b;
+  --nav-grad-sunset: linear-gradient(120deg, #ff6b5b 0%, #ffc93c 100%);
+  --nav-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* ============================================================
+   SHARED SHELL — just the sticky positioning strip that holds
+   whichever nav is active. No link/button styling here.
+   ============================================================ */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  background: rgba(11, 37, 69, 0.42);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 0.3s var(--nav-ease), box-shadow 0.3s var(--nav-ease);
+}
+
+.site-nav.is-scrolled {
+  background: rgba(11, 37, 69, 0.9);
+  box-shadow: 0 12px 30px -16px rgba(0, 0, 0, 0.5);
+}
+
+.site-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.site-nav-brand:hover {
+  opacity: 0.85;
+}
+
+.site-nav-brand img {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+}
+
+.site-nav-brand span {
+  display: none;
+}
+
+@media (min-width: 480px) {
+  .site-nav-brand span {
+    display: inline;
+  }
+}
+
+/* ============================================================
+   DESKTOP NAV — ≥901px. Plain inline links + language switch.
+   No JS required at all.
+   ============================================================ */
+.nav-desktop {
+  display: none;
+}
+
+@media (min-width: 901px) {
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .nav-desktop-list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    list-style: none;
+  }
+
+  .nav-desktop-list .nav-link {
+    display: inline-block;
+    padding: 9px 16px;
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.88);
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    font-size: 0.92rem;
+    transition: background 0.25s var(--nav-ease), color 0.25s var(--nav-ease), transform 0.25s var(--nav-ease);
+  }
+
+  .nav-desktop-list .nav-link:hover,
+  .nav-desktop-list .nav-link:focus-visible {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    transform: translateY(-2px);
+  }
+
+  .nav-desktop-list .nav-link.active {
+    background: var(--nav-grad-sunset);
+    color: var(--nav-ink);
+    font-weight: 700;
+    box-shadow: 0 6px 16px -6px rgba(255, 107, 91, 0.6);
+  }
+
+  .nav-desktop-list .nav-account-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+  }
+
+  .nav-desktop-list .nav-emergency-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #ffd7d2;
+    border: 1px solid rgba(255, 107, 91, 0.5);
+  }
+
+  .nav-desktop-list .nav-emergency-link:hover,
+  .nav-desktop-list .nav-emergency-link:focus-visible {
+    background: rgba(215, 38, 61, 0.35);
+    color: #fff;
+  }
+
+  .nav-desktop-list .nav-emergency-link.active {
+    background: linear-gradient(135deg, #d7263d 0%, #a8172a 100%);
+    color: #fff;
+  }
+
+  .nav-desktop .lang-switch {
+    display: flex;
+    gap: 6px;
+  }
+}
+
+/* ============================================================
+   MOBILE CONTROLS BAR — ≤900px. Just the lang switch + the
+   hamburger button, sitting inline in the sticky strip.
+   ============================================================ */
+.nav-mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+@media (min-width: 901px) {
+  .nav-mobile-controls {
+    display: none;
+  }
+}
+
+.nav-mobile-controls .lang-switch {
+  display: flex;
+  gap: 5px;
+}
+
+.mobile-nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.25s var(--nav-ease), border-color 0.25s var(--nav-ease);
+  /* Deliberately a normal, positioned-in-flow button: it lives inline
+     in .site-nav and keeps a real z-index so it always sits above the
+     drawer/backdrop below, even while the menu is open. */
+  position: relative;
+  z-index: 2;
+}
+
+.mobile-nav-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-nav-toggle:active {
+  transform: scale(0.94);
+}
+
+.mobile-nav-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2.5px;
+  border-radius: 2px;
+  background: #fff;
+  transition: transform 0.32s var(--nav-ease), opacity 0.22s ease;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .mobile-nav-toggle-bar:nth-child(1) {
+  transform: translateY(7.5px) rotate(45deg);
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .mobile-nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] .mobile-nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7.5px) rotate(-45deg);
+}
+
+/* ============================================================
+   MOBILE DRAWER + BACKDROP — ≤900px only. Fixed to the
+   viewport, entirely independent of .site-nav's own stacking.
+   Both start hidden via the [hidden] attribute (not just CSS),
+   so there is no ambiguous "closed but still there" state.
+   ============================================================ */
+.mobile-nav-backdrop {
+  display: none;
+}
+
+.mobile-nav-drawer {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .nav-mobile-controls .lang-switch {
+    display: none;
+  }
+
+  .mobile-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 600;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: rgba(8, 20, 35, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s var(--nav-ease);
+  }
+
+  .mobile-nav-backdrop[hidden] {
+    display: none;
+  }
+
+  .mobile-nav-backdrop.is-open {
+    opacity: 1;
+  }
+
+  .mobile-nav-drawer {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 700;
+    width: min(320px, 86vw);
+    padding: 84px 20px 28px;
+    background: linear-gradient(180deg, #123a63 0%, #0b2545 100%);
+    box-shadow: -14px 0 48px rgba(0, 0, 0, 0.32);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(100%);
+    transition: transform 0.36s var(--nav-ease);
+  }
+
+  .mobile-nav-drawer[hidden] {
+    display: none;
+  }
+
+  .mobile-nav-drawer.is-open {
+    transform: translateX(0);
+  }
+
+  .mobile-nav-drawer::before {
+    content: "Explore Satun";
+    display: block;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--nav-sun);
+    padding-bottom: 16px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .mobile-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .mobile-nav-list .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 14px;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+
+  .mobile-nav-list .nav-link:hover,
+  .mobile-nav-list .nav-link:focus-visible {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-nav-list .nav-link.active {
+    background: var(--nav-grad-sunset);
+    color: var(--nav-ink);
+    font-weight: 700;
+  }
+
+  .mobile-nav-list .nav-emergency-link {
+    color: #ffb3ab;
+  }
+
+  .mobile-nav-list .nav-emergency-link:hover,
+  .mobile-nav-list .nav-emergency-link:focus-visible {
+    background: rgba(215, 38, 61, 0.3);
+    color: #fff;
+  }
+
+  .mobile-nav-list .nav-emergency-link.active {
+    background: linear-gradient(135deg, #d7263d 0%, #a8172a 100%);
+    color: #fff;
+  }
+
+  .mobile-nav-lang-section {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .mobile-nav-lang-label {
+    margin: 0 0 10px 4px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .mobile-nav-lang-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .mobile-nav-lang-grid .lang-btn {
+    width: auto;
+    text-align: center;
+    padding: 10px 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.82rem;
+  }
+
+  .mobile-nav-lang-grid .lang-btn:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #fff;
+  }
+
+  .mobile-nav-lang-grid .lang-btn.lang-btn-active {
+    background: var(--nav-sun);
+    color: var(--nav-ink);
+    font-weight: 700;
+  }
+
+  body.mobile-nav-open {
+    overflow: hidden;
+  }
+}
+
+/* ============================================================
+   LANGUAGE SWITCH — dropdown menu (scales to any number of
+   languages), used inside both desktop and mobile bars.
+   ============================================================ */
+.lang-switch {
+  position: relative;
+}
+
+.lang-switch-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  font-size: 0.74rem;
+  cursor: pointer;
+  transition: transform 0.25s var(--nav-ease), background 0.25s var(--nav-ease);
+}
+
+.lang-switch-toggle:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.lang-switch-toggle i.fa-globe {
+  font-size: 0.78rem;
+}
+
+.lang-switch-caret {
+  font-size: 0.6rem;
+  transition: transform 0.25s var(--nav-ease);
+}
+
+.lang-switch.is-open .lang-switch-caret {
+  transform: rotate(180deg);
+}
+
+.lang-switch-menu {
+  position: fixed;
+  min-width: 170px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: var(--nav-ink, #0b2545);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  padding: 6px;
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+  z-index: 2500;
+  flex-direction: column;
+  gap: 2px;
+  transform-origin: top right;
+  opacity: 0;
+  transform: scale(0.9) translateY(-6px);
+  transition: opacity 0.16s var(--nav-ease), transform 0.18s var(--nav-ease);
+}
+
+.lang-switch-menu.is-open {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.lang-switch-menu[hidden] {
+  display: none;
+}
+
+.lang-switch-menu:not([hidden]) {
+  display: flex;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-switch-menu {
+    transition: none;
+  }
+}
+
+.lang-btn {
+  width: 100%;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 9px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Kanit', sans-serif;
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.lang-btn.lang-btn-active,
+.lang-btn[aria-pressed="true"] {
+  background: var(--nav-sun);
+  color: var(--nav-ink);
+  font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .site-nav {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .nav-mobile-controls {
+    gap: 6px;
+  }
+
+  .lang-switch-toggle {
+    padding: 6px 9px;
+    font-size: 0.68rem;
+  }
+
+  .mobile-nav-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mobile-nav-drawer {
+    width: min(300px, 88vw);
+    padding: 76px 18px 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .lang-switch-toggle {
+    padding: 5px 8px;
+    font-size: 0.62rem;
+  }
+
+  .site-nav-brand span {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav-drawer,
+  .mobile-nav-backdrop,
+  .mobile-nav-toggle-bar,
+  .lang-btn {
+    transition: none !important;
+  }
+}
